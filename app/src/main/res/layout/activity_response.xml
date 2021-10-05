@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResponseActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/qboard_primary_color">
+
+            <ImageButton
+                android:id="@+id/backbtn"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:background="@color/qboxus_transparent"
+                android:scaleType="fitStart"
+                android:src="@drawable/ic_qboxus_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/backbtn"
+                android:text="Sticker Store"
+                android:textColor="@color/qboard_WhiteBothSide"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonTrendingPack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get Trending Pack" />
+
+        <Button
+            android:id="@+id/buttonSearchPack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get Search Pack" />
+
+        <Button
+            android:id="@+id/buttonTrendingSticker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get Trending Sticker" />
+
+        <Button
+            android:id="@+id/buttonSearchSticker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get Search Sticker" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

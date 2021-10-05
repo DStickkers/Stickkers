@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StickerViewActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/qboard_primary_color">
+
+            <ImageButton
+                android:id="@+id/backbtn"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:background="@color/qboxus_transparent"
+                android:scaleType="fitStart"
+                android:src="@drawable/ic_qboxus_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/backbtn"
+                android:text="Sticker Store"
+                android:textColor="@color/qboard_WhiteBothSide"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/gifpreview"
+            android:layout_width="@dimen/_175sdp"
+            android:layout_height="@dimen/_175sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:padding="@dimen/_5sdp"
+            app:placeholderImage="@drawable/ic_qboxus_placeholder" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/send_option_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:layout_above="@+id/giphyView"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="@drawable/d_border_gray_line">
+
+            <EditText
+                android:id="@+id/msgEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="11dp"
+                android:layout_toStartOf="@+id/upload_stiker_btn"
+                android:backgroundTint="@color/qboxus_transparent"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:hint="Type your messgae"
+                android:imeOptions="actionSend"
+                android:inputType="textCapSentences|textMultiLine|textNoSuggestions"
+                android:padding="12dp"
+                android:textColor="@color/qboardBlack"
+                android:textColorHint="@color/qboardGray6"
+                android:textSize="@dimen/_13sdp" />
+
+            <ImageButton
+                android:id="@+id/upload_stiker_btn"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/qboxus_transparent"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/ic_qboxus_smile" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/giphyView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <com.qboxus.qkeyboard.GiphyNew.GiphyView
+            android:id="@+id/giphy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/qboardWhite"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</RelativeLayout>
