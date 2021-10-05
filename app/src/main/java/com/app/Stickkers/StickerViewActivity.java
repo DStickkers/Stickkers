@@ -11,14 +11,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.Stickkers.Utils.Functions;
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.qboxus.qkeyboard.GiphyNew.GiphyView;
-import com.qboxus.qkeyboard.Interfaces.GifSelectedCallback;
+import com.stickkers.Interfaces.StickkerCallback;
+import com.stickkers.Views.StickkerView;
+
 
 public class StickerViewActivity extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton uploadStikerBtn;
     SimpleDraweeView draweeView;
-    GiphyView giphy;
+    StickkerView giphy;
     EditText msgEdit;
 
     @Override
@@ -36,7 +37,7 @@ public class StickerViewActivity extends AppCompatActivity implements View.OnCli
 
         giphy.setSdkView(giphy, uploadStikerBtn, msgEdit);
 
-        giphy.setSelectedCallback(new GifSelectedCallback() {
+        giphy.setSelectedCallback(new StickkerCallback() {
             @Override
             public void onGifSelected(String uri) {
                 Log.d("stickkers_", "image uri at activity: " + uri.toString());

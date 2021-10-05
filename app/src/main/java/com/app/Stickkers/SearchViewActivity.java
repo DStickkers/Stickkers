@@ -11,14 +11,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.Stickkers.Utils.Functions;
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.qboxus.qkeyboard.GiphyNew.GiphyView;
-import com.qboxus.qkeyboard.Interfaces.GifSelectedCallback;
-import com.qboxus.qkeyboard.SearchSticker.SearchStickerView;
+import com.stickkers.Interfaces.StickkerCallback;
+import com.stickkers.SearchSticker.SearchStickkerView;
+import com.stickkers.Views.StickkerView;
+
 
 public class SearchViewActivity extends AppCompatActivity implements View.OnClickListener {
     ImageButton uploadStikerBtn;
     SimpleDraweeView draweeView;
-    GiphyView giphy;
+    StickkerView giphy;
     EditText msgEdit ;
 
     @Override
@@ -30,13 +31,13 @@ public class SearchViewActivity extends AppCompatActivity implements View.OnClic
         uploadStikerBtn = findViewById(R.id.upload_stiker_btn);
         msgEdit = findViewById(R.id.msgEdit);
         giphy = findViewById(R.id.giphy);
-        SearchStickerView searchStickerView = findViewById(R.id.searchStickerView);
+        SearchStickkerView searchStickerView = findViewById(R.id.searchStickkerView);
 
         giphy.initialize(SearchViewActivity.this, Constants.SDK_API_KEY);
         giphy.setSdkView(giphy,searchStickerView, uploadStikerBtn , msgEdit);
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
-        giphy.setSelectedCallback(new GifSelectedCallback() {
+        giphy.setSelectedCallback(new StickkerCallback() {
             @Override
             public void onGifSelected(String uri) {
                 Log.d("qboard_", "image uri at activity: " + uri.toString());

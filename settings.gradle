@@ -5,7 +5,7 @@ dependencyResolutionManagement {
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
         maven {
-            url "https://mymavenrepo.com/repo/cvT9pgtqXw7xk2or41Uv/"
+            url "https://mymavenrepo.com/repo/9zluVSu11SVyhthj3VmH/"
         }
     }
 }

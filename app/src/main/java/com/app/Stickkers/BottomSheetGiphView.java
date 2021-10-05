@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.Stickkers.Utils.Functions;
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.qboxus.qkeyboard.GiphyNew.GiphyBottomSheet;
-import com.qboxus.qkeyboard.Interfaces.GifSelectedCallback;
+import com.stickkers.Interfaces.StickkerCallback;
+import com.stickkers.Views.StickkerBottomSheet;
 
 public class BottomSheetGiphView extends AppCompatActivity implements View.OnClickListener {
     ImageButton uploadStikerBtn;
@@ -31,7 +31,7 @@ public class BottomSheetGiphView extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.upload_stiker_btn:
-                GiphyBottomSheet stickyBottomSheet = GiphyBottomSheet.newInstance(new GifSelectedCallback() {
+                StickkerBottomSheet stickyBottomSheet = StickkerBottomSheet.newInstance(new StickkerCallback() {
                     @Override
                     public void onGifSelected(String uri) {
                         Functions.showStickerFresco(uri, draweeView);

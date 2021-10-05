@@ -5,18 +5,20 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.qboxus.qkeyboard.GPhApiClient.GiphyApiHelper;
-import com.qboxus.qkeyboard.GPhApiClient.ApiListener;
+
+import com.stickkers.ApiClient.ApiHelper;
+import com.stickkers.ApiClient.StickkerListener;
+
 
 public class ResponseActivity extends AppCompatActivity implements View.OnClickListener {
-    private GiphyApiHelper helper;
+    private ApiHelper helper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_response);
 
-        helper = new GiphyApiHelper(Constants.SDK_API_KEY);
+        helper = new ApiHelper(Constants.SDK_API_KEY);
 
         findViewById(R.id.buttonTrendingPack).setOnClickListener(this);
         findViewById(R.id.buttonSearchPack).setOnClickListener(this);
@@ -26,7 +28,7 @@ public class ResponseActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void searchStickerIcon(){
-        helper.searchStickerIcon("sticker", "ho" ,  new ApiListener() {
+        helper.searchStickerIcon("sticker", "ho" ,  new StickkerListener() {
             @Override
             public void success(Object response) {
                 showToast(response.toString());
@@ -46,7 +48,7 @@ public class ResponseActivity extends AppCompatActivity implements View.OnClickL
 
 
     private void searchpack(){
-        helper.searchpack("sticker", "ho" ,  new ApiListener() {
+        helper.searchpack("sticker", "ho" ,  new StickkerListener() {
             @Override
             public void success(Object response) {
                 showToast(response.toString());
@@ -66,7 +68,7 @@ public class ResponseActivity extends AppCompatActivity implements View.OnClickL
 
 
     private void trendingPack(){
-        helper.trendingPack("sticker", "" ,  new ApiListener() {
+        helper.trendingPack("sticker", "" ,  new StickkerListener() {
             @Override
             public void success(Object response) {
                 showToast(response.toString());
@@ -86,7 +88,7 @@ public class ResponseActivity extends AppCompatActivity implements View.OnClickL
 
 
     private void trendingStickerIcon(){
-        helper.trendingStickerIcon("sticker", "" ,  new ApiListener() {
+        helper.trendingStickerIcon("sticker", "" ,  new StickkerListener() {
             @Override
             public void success(Object response) {
                 showToast(response.toString());

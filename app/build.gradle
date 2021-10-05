@@ -39,7 +39,7 @@ dependencies {
     implementation 'com.facebook.fresco:fresco:2.5.0'
 
     //for sdk implementation
-    implementation ('com.qboxus:qboard:0.0.2-SNAPSHOT@aar') {
+    implementation ('com.stickkers:sdk:0.0.1@aar') {
         transitive=true
     }
 }

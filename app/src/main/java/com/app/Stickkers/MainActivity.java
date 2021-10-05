@@ -1,6 +1,7 @@
 package com.app.Stickkers;
 
-import static com.qboxus.qkeyboard.GiphyNew.ImagePipelineConfigUtils.getDefaultImagePipelineConfig;
+
+import static com.stickkers.Views.ImagePipelineConfigUtils.getDefaultImagePipelineConfig;
 
 import android.app.UiModeManager;
 import android.content.Context;

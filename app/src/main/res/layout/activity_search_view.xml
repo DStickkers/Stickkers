@@ -60,8 +60,9 @@
     </RelativeLayout>
 
 
-    <com.qboxus.qkeyboard.SearchSticker.SearchStickerView
-        android:id="@+id/searchStickerView"
+
+    <com.stickkers.SearchSticker.SearchStickkerView
+        android:id="@+id/searchStickkerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/send_option_layout"
@@ -123,12 +124,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
 
-        <com.qboxus.qkeyboard.GiphyNew.GiphyView
+
+        <com.stickkers.Views.StickkerView
             android:id="@+id/giphy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/qboardWhite"
             android:visibility="gone" />
+
 
     </LinearLayout>
 

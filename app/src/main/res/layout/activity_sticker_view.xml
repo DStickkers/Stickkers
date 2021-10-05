@@ -115,7 +115,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
 
-        <com.qboxus.qkeyboard.GiphyNew.GiphyView
+        <com.stickkers.Views.StickkerView
             android:id="@+id/giphy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
