@@ -19,7 +19,7 @@ import com.stickkers.Views.StickkerView;
 public class SearchViewActivity extends AppCompatActivity implements View.OnClickListener {
     ImageButton uploadStikerBtn;
     SimpleDraweeView draweeView;
-    StickkerView giphy;
+    StickkerView stickkerView;
     EditText msgEdit ;
 
     @Override
@@ -30,14 +30,14 @@ public class SearchViewActivity extends AppCompatActivity implements View.OnClic
         draweeView = findViewById(R.id.gifpreview);
         uploadStikerBtn = findViewById(R.id.upload_stiker_btn);
         msgEdit = findViewById(R.id.msgEdit);
-        giphy = findViewById(R.id.giphy);
+        stickkerView = findViewById(R.id.giphy);
         SearchStickkerView searchStickerView = findViewById(R.id.searchStickkerView);
 
-        giphy.initialize(SearchViewActivity.this, Constants.SDK_API_KEY);
-        giphy.setSdkView(giphy,searchStickerView, uploadStikerBtn , msgEdit);
+        stickkerView.initialize(SearchViewActivity.this, Constants.SDK_API_KEY);
+        stickkerView.setSdkView(stickkerView,searchStickerView, uploadStikerBtn , msgEdit);
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
-        giphy.setSelectedCallback(new StickkerCallback() {
+        stickkerView.setSelectedCallback(new StickkerCallback() {
             @Override
             public void onGifSelected(String uri) {
                 Log.d("qboard_", "image uri at activity: " + uri.toString());
@@ -50,8 +50,8 @@ public class SearchViewActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onBackPressed() {
-        if (giphy.getVisibility() == View.VISIBLE) {
-            giphy.setCallback();
+        if (stickkerView.getVisibility() == View.VISIBLE) {
+            stickkerView.setCallback();
         } else {
             super.onBackPressed();
         }
