@@ -19,7 +19,7 @@ public class StickerViewActivity extends AppCompatActivity implements View.OnCli
 
     ImageButton uploadStikerBtn;
     SimpleDraweeView draweeView;
-    StickkerView giphy;
+    StickkerView stickkerView;
     EditText msgEdit;
 
     @Override
@@ -31,13 +31,13 @@ public class StickerViewActivity extends AppCompatActivity implements View.OnCli
         uploadStikerBtn = findViewById(R.id.upload_stiker_btn);
         msgEdit = findViewById(R.id.msgEdit);
 
-        giphy = findViewById(R.id.giphy);
+        stickkerView = findViewById(R.id.giphy);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
-        giphy.initialize(StickerViewActivity.this, Constants.SDK_API_KEY);
+        stickkerView.initialize(StickerViewActivity.this, Constants.SDK_API_KEY);
 
-        giphy.setSdkView(giphy, uploadStikerBtn, msgEdit);
+        stickkerView.setSdkView(stickkerView, uploadStikerBtn, msgEdit);
 
-        giphy.setSelectedCallback(new StickkerCallback() {
+        stickkerView.setSelectedCallback(new StickkerCallback() {
             @Override
             public void onGifSelected(String uri) {
                 Log.d("stickkers_", "image uri at activity: " + uri.toString());
@@ -49,8 +49,8 @@ public class StickerViewActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onBackPressed() {
-        if (giphy.getVisibility() == View.VISIBLE) {
-            giphy.setCallback();
+        if (stickkerView.getVisibility() == View.VISIBLE) {
+            stickkerView.setCallback();
         } else {
             super.onBackPressed();
         }

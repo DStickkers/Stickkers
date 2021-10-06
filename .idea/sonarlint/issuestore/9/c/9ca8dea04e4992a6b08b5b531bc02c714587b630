@@ -1,0 +1,20 @@
+
+^
+java:S1858'"H"error" is already a string, there's no need to call "toString()" on it.(·ë†á
+`
+java:S1858,"J"message" is already a string, there's no need to call "toString()" on it.(­Ã ş
+^
+java:S1858;"H"error" is already a string, there's no need to call "toString()" on it.(·ë†á
+`
+java:S1858@"J"message" is already a string, there's no need to call "toString()" on it.(­Ã ş
+^
+java:S1858O"H"error" is already a string, there's no need to call "toString()" on it.(·ë†á
+`
+java:S1858T"J"message" is already a string, there's no need to call "toString()" on it.(­Ã ş
+^
+java:S1858c"H"error" is already a string, there's no need to call "toString()" on it.(·ë†á
+`
+java:S1858h"J"message" is already a string, there's no need to call "toString()" on it.(­Ã ş
+^
+java:S1192"HDefine a constant instead of duplicating this literal "sticker" 4 times.(³ã´
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ï«©Ú
