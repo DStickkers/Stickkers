@@ -2,6 +2,8 @@ package com.app.Stickkers;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +14,8 @@ import com.stickkers.ApiClient.StickkerListener;
 
 public class ResponseActivity extends AppCompatActivity implements View.OnClickListener {
     private ApiHelper helper;
+    TextView responseText;
+    ProgressBar progressCircular;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +23,8 @@ public class ResponseActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_response);
 
         helper = new ApiHelper(Constants.SDK_API_KEY);
-
+        responseText = (TextView) findViewById(R.id.responseText);
+        progressCircular =  findViewById(R.id.progress_circular);
         findViewById(R.id.buttonTrendingPack).setOnClickListener(this);
         findViewById(R.id.buttonSearchPack).setOnClickListener(this);
         findViewById(R.id.buttonTrendingSticker).setOnClickListener(this);
@@ -28,19 +33,23 @@ public class ResponseActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void searchStickerIcon(){
+        progressCircular.setVisibility(View.VISIBLE);
         helper.searchStickerIcon("sticker", "ho" ,  new StickkerListener() {
             @Override
             public void success(Object response) {
+                progressCircular.setVisibility(View.GONE);
                 showToast(response.toString());
             }
 
             @Override
             public void error(String error) {
+                progressCircular.setVisibility(View.GONE);
                 showToast(error.toString());
             }
 
             @Override
             public void failure(String message) {
+                progressCircular.setVisibility(View.GONE);
                 showToast(message.toString());
             }
         });
@@ -48,19 +57,24 @@ public class ResponseActivity extends AppCompatActivity implements View.OnClickL
 
 
     private void searchpack(){
+        progressCircular.setVisibility(View.VISIBLE);
         helper.searchpack("sticker", "ho" ,  new StickkerListener() {
             @Override
             public void success(Object response) {
-                showToast(response.toString());
+                progressCircular.setVisibility(View.GONE);
+                responseText.setText(response.toString());
+
             }
 
             @Override
             public void error(String error) {
+                progressCircular.setVisibility(View.GONE);
                 showToast(error.toString());
             }
 
             @Override
             public void failure(String message) {
+                progressCircular.setVisibility(View.GONE);
                 showToast(message.toString());
             }
         });
@@ -68,19 +82,23 @@ public class ResponseActivity extends AppCompatActivity implements View.OnClickL
 
 
     private void trendingPack(){
+        progressCircular.setVisibility(View.VISIBLE);
         helper.trendingPack("sticker", "" ,  new StickkerListener() {
             @Override
             public void success(Object response) {
-                showToast(response.toString());
+                progressCircular.setVisibility(View.GONE);
+                responseText.setText(response.toString());
             }
 
             @Override
             public void error(String error) {
+                progressCircular.setVisibility(View.GONE);
                 showToast(error.toString());
             }
 
             @Override
             public void failure(String message) {
+                progressCircular.setVisibility(View.GONE);
                 showToast(message.toString());
             }
         });
@@ -88,19 +106,23 @@ public class ResponseActivity extends AppCompatActivity implements View.OnClickL
 
 
     private void trendingStickerIcon(){
+        progressCircular.setVisibility(View.VISIBLE);
         helper.trendingStickerIcon("sticker", "" ,  new StickkerListener() {
             @Override
             public void success(Object response) {
-                showToast(response.toString());
+                progressCircular.setVisibility(View.GONE);
+                responseText.setText(response.toString());
             }
 
             @Override
             public void error(String error) {
+                progressCircular.setVisibility(View.GONE);
                 showToast(error.toString());
             }
 
             @Override
             public void failure(String message) {
+                progressCircular.setVisibility(View.GONE);
                 showToast(message.toString());
             }
         });
